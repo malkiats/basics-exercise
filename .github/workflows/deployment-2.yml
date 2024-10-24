@@ -1,4 +1,4 @@
-name:  Deployment Exercise 1
+name:  Deployment Exercise 2
 on: push
 jobs:
   lint:
@@ -9,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint
-        run: npm run lint
+        run: npx eslint --init && npm run lint
   test:
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Test code
-        run: npm run test  
+        run: npx eslint --init && npm run test  
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +27,7 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: Build code
-        run: npm run build
+        run: npx eslint --init && npm run build
       - name: Deploy code
-        run: echo "Deploying...." 
+        run: echo "Deploying..." 
         
