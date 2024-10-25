@@ -1,6 +1,11 @@
-import globals from "globals";
+// .eslintrc.cjs
+const globals = require("globals");
 
-
-export default [
-  {languageOptions: { globals: globals.browser }},
+module.exports = [
+  {
+    files: ["src/**/*.{js,jsx}"],
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
 ];
